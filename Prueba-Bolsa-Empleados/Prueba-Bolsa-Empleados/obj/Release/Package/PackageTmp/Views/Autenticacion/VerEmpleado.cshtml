@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Prueba_Bolsa_Empleados.Models.Empleado>
+
+
+@{Layout = "~/Views/Shared/Layout.cshtml";
+    if (Session["IDAdmin"] == null)
+    {
+        Response.Redirect("~/Autenticacion/LoginAdmin");
+    }
+}
+
+<h1 style="text-align:center">Empleado Poster</h1>
+<hr />
+<br />
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Empleado Poster</title>
+</head>
+
+<body>
+    <form action="obtener_diseñado_fecha/Fecha_Publicacion">
+        <input style="width:50%" type="date" name="Fecha_Publicacion" id="Fecha_Publicacion" value="Fecha_Publicacion" />
+        <button type="button" class="btn btn-primary btn-sm">
+            <span class="glyphicon glyphicon-zoom-in"></span> Buscar
+        </button>
+    </form>
+    <br />
+
+    @foreach (var empleado in Model)
+    {
+
+
+
+
+
+
+        <div class="panel panel-primary col-lg-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">@empleado.Usuario </div>
+                <div class="panel-body">
+                    <img style="margin-left:30%" height="215" width="215" class="img-responsive" src="~/Imagenes/user60.png">
+                    <p>ID Empleado: @empleado.IDEmpleado</p>
+                    <p>Nombre: @empleado.Nombre</p>
+                    <p>Contraseña:@empleado.Contraseña</p>
+                    <p>Direccion:@empleado.Dirreccion </p>
+                    <p>Codigo Postal: @empleado.idpais</p>
+
+                    <p>
+                        <form action="ActualizarEmpleado/@empleado.IDEmpleado">
+
+                            <button type="submit" class="btn btn-success">
+                                <span class="glyphicon glyphicon-pencil"></span> Modificar Empleados
+                            </button>
+
+
+                        </form>
+
+
+                    </p>
+
+
+
+
+                    <form action="EliminarEmpleado/@empleado.IDEmpleado">
+
+                        <button type="submit" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash"></span> Eliminar Empleados
+                        </button>
+
+
+                    </form>
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    }
+
+    <a href='@Url.Action("Index1")'>
+        <button style="margin-top:60%;margin-right:40%" type="button" class="btn btn-info btn-sm" value="submit">
+            <span class="glyphicon glyphicon-chevron-left"></span> Volver Al menu Principal
+        </button>
+    </a>
+
+
+</body>
+</html>

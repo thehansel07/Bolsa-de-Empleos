@@ -1,0 +1,139 @@
+﻿
+@model Prueba_Bolsa_Empleados.Models.Publicacion
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["IDAdmin"] == null)
+    {
+        Response.Redirect("~/Autenticacion/LoginAdmin");
+    }
+}
+<body style="background-color:aliceblue">
+</body>
+
+
+
+<div>
+    <h1 style="color:red">Eliminar Programador</h1>
+    <hr />
+    <br />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idPublicaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idPublicaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idpais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idpais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idAdministrador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idAdministrador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Compañia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Compañia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_Horario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_Horario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Publicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Publicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Correo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Url_Pagina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Url_Pagina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Posicion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Posicion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dirreccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dirreccion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+
+        </div>
+
+    }
+
+    @Html.ActionLink("Back to List", "VerProgramador")
+</div>

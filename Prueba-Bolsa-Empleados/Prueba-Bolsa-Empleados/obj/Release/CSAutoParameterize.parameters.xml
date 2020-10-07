@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DBBolsaEmpleoEntities-Web.config Connection String" description="DBBolsaEmpleoEntities Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/Models.basededatos.csdl|res://*/Models.basededatos.ssdl|res://*/Models.basededatos.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DBBolsaEmpleo.mssql.somee.com;initial catalog=DBBolsaEmpleo;user id=Hansel08_SQLLogin_1;password=9ibc3tcouk;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\MSI\\source\\repos\\Prueba-Bolsa-Empleados\\Prueba-Bolsa-Empleados\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DBBolsaEmpleoEntities']/@connectionString" />
+  </parameter>
+</parameters>

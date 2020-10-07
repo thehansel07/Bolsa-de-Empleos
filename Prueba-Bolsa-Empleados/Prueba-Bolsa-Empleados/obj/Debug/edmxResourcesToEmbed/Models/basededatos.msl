@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBBolsaEmpleoStoreContainer" CdmEntityContainer="DBBolsaEmpleoEntities">
+    <EntitySetMapping Name="Administrador">
+      <EntityTypeMapping TypeName="DBBolsaEmpleo.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="IDAdmin" ColumnName="IDAdmin" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="Dirreccion" ColumnName="Dirreccion" />
+          <ScalarProperty Name="idpais" ColumnName="idpais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="DBBolsaEmpleo.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="Dirreccion" ColumnName="Dirreccion" />
+          <ScalarProperty Name="idpais" ColumnName="idpais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

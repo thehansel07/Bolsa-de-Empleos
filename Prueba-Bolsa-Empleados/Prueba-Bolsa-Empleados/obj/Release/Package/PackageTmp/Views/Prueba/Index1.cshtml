@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Prueba_Bolsa_Empleados.Models.Publicacion>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Are de Diseñador</title>
+</head>
+
+<body style="background-color:aliceblue">
+    <h1 style="text-align:center;font-family:Arial Black;color:blue">Área de Diseñador</h1>
+    <hr />
+    <br />
+    <form action="obtener_diseñado_fecha/Fecha_Publicacion">
+        <input style="width:50%" type="date" name="Fecha_Publicacion" id="Fecha_Publicacion" value="Fecha_Publicacion" />
+        <button type="button" class="btn btn-primary btn-sm">
+            <span class="glyphicon glyphicon-zoom-in"></span> Buscar
+        </button>
+    </form>
+    <br />
+    <div>
+        @foreach (var publicaciones in Model)
+        {
+
+            <div class="panel panel-primary col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">@publicaciones.Posicion </div>
+                    <div class="panel-body">
+                        <img style="margin-left:30%" height="215" width="215" class="img-responsive" src="@publicaciones.Logo">
+                        <p>Nombre de la Compañia: @publicaciones.Nombre_Compañia</p>
+                        <p>Direccion: @publicaciones.Dirreccion</p>
+                    </div>
+
+                    <form action="Details1/@publicaciones.idPublicaciones">
+
+                        <button type="submit" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-eye-open"> Ver</span>
+                        </button>
+
+
+                    </form>
+
+
+                </div>
+
+            </div>
+
+
+
+
+        }
+
+        <div>
+
+            <a href='@Url.Action("principal","Prueba")'>
+                <button style="margin-top:60%;margin-right:40%" type="button" class="btn btn-info btn-sm" value="submit">
+                    <span class="glyphicon glyphicon-chevron-left"></span> Volver Al menu Principal
+                </button>
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+</body>
+</html>
+

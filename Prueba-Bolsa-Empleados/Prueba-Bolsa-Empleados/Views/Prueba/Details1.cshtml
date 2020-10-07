@@ -1,0 +1,85 @@
+﻿@model Prueba_Bolsa_Empleados.Models.Publicacion
+
+@{
+    ViewBag.Title = "Details1";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Area Diseñador</title>
+</head>
+<body style="background-color:black">
+    <h1 style="text-align:center;color:white">Área de Diseñador</h1>
+    <hr />
+    <div style="margin-left:25%">
+        <div class="panel panel-primary col-lg-8">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <a style="color:white">@Html.DisplayFor(model => model.Nombre_Compañia)</a>
+                </div>
+                <br />
+                <div class="panel-body">
+                    <img style="margin-left:15%" height="70%" width="70%" class="img-responsive" src=@Html.DisplayFor(model => model.Logo)>
+                    <p>Posicion:@Html.DisplayFor(model => model.Posicion)</p>
+                    <p>Tipo de Horario:@Html.DisplayFor(model => model.Tipo_Horario)</p>
+                    <p>Pagina: <a href=" @Html.DisplayFor(model => model.Url_Pagina)" target="_blank">Nuestra Pagina</a></p>
+                    <p>Direccion:@Html.DisplayFor(model => model.Dirreccion)</p>
+                    <p>Correo: @Html.DisplayFor(model => model.Correo)</p>
+                    <p>Fecha: @Html.DisplayFor(model => model.Fecha_Publicacion)</p>
+
+                </div>
+
+
+            </div>
+
+            <p>
+                <a href='@Url.Action("AgregarPostulados","Prueba")'>
+                    <button type="button" class="btn btn-success btn-sm" value="submit">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> Me Interesa
+                    </button>
+                </a>
+
+            </p>
+
+
+            <p>
+
+                <a href='@Url.Action("principal","Prueba")'>
+                    <button type="button" class="btn btn-danger btn-sm" value="submit">
+                        <span class="glyphicon glyphicon-chevron-left"></span> Volver Al menu Principal
+                    </button>
+                </a>
+
+
+
+
+            </p>
+
+
+            
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+

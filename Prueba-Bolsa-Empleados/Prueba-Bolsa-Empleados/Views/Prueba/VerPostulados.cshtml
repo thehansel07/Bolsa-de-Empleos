@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Prueba_Bolsa_Empleados.Models.Usuario>
+
+
+@{Layout = "~/Views/Shared/Layout.cshtml";
+    if (Session["IDEmpleado"] == null)
+    {
+        Response.Redirect("~/Autenticacion/LoginEmpleado");
+    }
+}
+
+<h1 style="text-align:center">Usuarios Postulados</h1>
+<hr />
+<br />
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Usuarios Postulados</title>
+
+    <style>
+       
+
+
+
+    </style>
+</head>
+<body>
+
+    @foreach (var usuario in Model)
+    {
+
+
+
+
+
+
+        <div class="panel panel-primary col-lg-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">@usuario.Puesto </div>
+                <div class="panel-body">
+                    <img style="margin-left:30%" height="215" width="215" class="img-responsive" src="~/Imagenes/user60.png">
+                    <p><b>Nombre:</b> @usuario.Nombre</p>
+                    <p><b>Cedula:</b> @usuario.Cedula</p>
+                    <p><b>Telefono:</b>@usuario.Telefono</p>
+                    <p><b>Correo:</b> @usuario.Correo</p>
+                    <p><b>Categoria:</b>@usuario.idCategoria </p>
+                    <br />
+                    <p style="text-align:center"><b>Razón que desea el puesto:</b></p>
+                    <p style="text-align:center"> @usuario.Interes</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    }
+
+    <a href='@Url.Action("Index","Autenticacion")'>
+        <button type="button" style="margin-top:60%;margin-right:40%" class="btn btn-info btn-sm" value="submit">
+            <span class="glyphicon glyphicon-chevron-left"></span> Volver Al menu Principal
+        </button>
+    </a>
+
+
+</body>
+</html>

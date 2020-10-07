@@ -1,0 +1,149 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["IDAdmin"] == null)
+    {
+        Response.Redirect("~/Autenticacion/LoginAdmin");
+    }
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .contenedor {
+            margin-top: 10%
+        }
+
+        .encabezado {
+            text-align: center;
+            font-size: 50px
+        }
+
+        .panel-heading {
+            text-align: center;
+            color: darkturquoise;
+        }
+
+        .bi bi-trash {
+            color: red;
+            background-color: red
+        }
+
+        .botones {
+            text-align: right;
+            margin-right: 93%;
+        }
+
+        .Categorias {
+            text-align: center
+        }
+    </style>
+
+    <meta name="viewport" content="width=device=width" />
+    <title>Pagina del Usuario</title>
+</head>
+<body style="background-image:url(/Imagenes/tabla-madera-fondo-falta-definicion-cafeteria_1421-3283.jpg); background-repeat:no-repeat;background-size:120%">
+    <div class="contenedor">
+        <table class="table table-bordered" style="text-align:center;background-color:white">
+            <tr>
+
+
+                <td>
+                    <img src="~/Imagenes/icon-think-user-centric-1.png" />
+                </td>
+            <tr>
+                <td>Usuario: @Session["Usuario"]</td>
+
+
+
+            </tr>
+
+            <tr>
+
+                <td><a href="@Url.Action("LoginAdmin","Autenticacion")">Salir</a></td>
+
+
+
+            </tr>
+        </table>
+    </div>
+    <div class="panel panel-primary col-lg-12">
+        <div class="panel panel-success">
+
+            <div class="panel-heading">
+                <h1>Supervisar por Categorias</h1>
+
+            </div>
+
+            <div class="panel-body">
+                <a href="VerDiseñado">
+                    <button type="button" class="btn btn-danger btn-lg btn-block">
+                        <span class="glyphicon glyphicon-briefcase"></span> Diseñador
+                    </button>
+                </a>
+                <br />
+
+
+                <a href="VerProgramador">
+                    <button type="button" class="btn btn-success btn-lg btn-block">
+                        <span class="glyphicon glyphicon-briefcase"></span> Programador
+                    </button>
+                </a>
+
+
+
+
+                <br />
+                <a href="VerAdministrativa">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">
+                        <span class="glyphicon glyphicon-briefcase"></span> Area Administrativa
+                    </button>
+                </a>
+                <br />
+
+                <a href="VerMantenimiento">
+                    <button type="button" class="btn btn-warning btn-lg btn-block">
+                        <span class="glyphicon glyphicon-briefcase"></span>  Area Mantenimiento
+                    </button>
+                </a>
+                <br />
+
+                <a href="AgregarEmpleado">
+                    <button type="button" class="btn btn-block btn-lg btn-block">
+                        <span class="glyphicon glyphicon-user"></span> Añadir Empleado
+                    </button>
+                </a>
+                <br />
+                <a href="VerEmpleado">
+                    <button type="button" class="btn btn-info btn-lg btn-block">
+                        <span class="glyphicon glyphicon-user"></span> Ver Empleados
+                    </button>
+                </a>
+
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    @{
+        ViewBag.Title = "Index1";
+        Layout = "~/Views/Shared/Layout.cshtml";
+    }
+

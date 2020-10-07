@@ -1,0 +1,120 @@
+﻿@model Prueba_Bolsa_Empleados.Models.Empleado
+@{
+
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>Login Empleado</title>
+    <style>
+        #login-div {
+            position: absolute;
+            left: 40%;
+            top: 35%;
+            border: 5px solid white;
+            padding: 50px 50px;
+            color: white;
+            background-color: deepskyblue
+        }
+
+        .field-validation-error {
+            color: yellow;
+            text-align: right;
+        }
+
+        .botones {
+            color: black;
+        }
+    </style>
+
+
+</head>
+
+<body style="background-image:url(/Imagenes/FondoEmpleado.jpg); background-repeat:no-repeat;background-size:115%">
+
+    <div id="login-div">
+        @using (Html.BeginForm("Autorizacion1", "Autenticacion", FormMethod.Post))
+        {
+            <h4 style="text-align:center; font-family:Arial black; color:white; font-size:25px;">
+                Login Empleado
+            </h4>
+
+            <br>
+
+            <table>
+
+
+
+                <tr>
+                    <td>@Html.LabelFor(model => model.Usuario) </td>
+                    <td style="color:black">@Html.EditorFor(model => model.Usuario) </td>
+
+                </tr>
+                <tr>
+
+
+                    <td>
+                        @Html.ValidationMessageFor(model => model.Usuario)
+                    </td>
+
+
+
+
+                </tr>
+
+
+                <tr>
+
+                    <td>@Html.LabelFor(model => model.Contraseña) </td>
+                    <td style="color:black">@Html.EditorFor(model => model.Contraseña) </td>
+
+
+                </tr>
+                <tr>
+
+
+
+                <tr>
+
+
+                    <td>
+                        @Html.ValidationMessageFor(model => model.Contraseña)
+                    </td>
+
+
+
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-error">@Html.DisplayFor(model => model.ErrorLogin)</label>
+
+                    </td>
+
+                </tr>
+
+
+
+
+            </table>
+
+            <br>
+          
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block" name="name" value="login">
+                <span class="glyphicon glyphicon-log-in"></span>  Iniciar Sección
+            </button>
+        }
+    </div>
+
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,153 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    if (Session["IDEmpleado"] == null)
+    {
+        Response.Redirect("~/Autenticacion/LoginEmpleado");
+    }
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .contenedor {
+            margin-top:10%
+        }
+
+        .encabezado {
+            text-align: center;
+            font-size: 50px
+        }
+
+        .panel-heading {
+            text-align: center;
+            color: darkturquoise;
+        }
+
+        .bi bi-trash {
+            color: red;
+            background-color: red
+        }
+
+        .botones {
+            text-align: right;
+            margin-right: 93%;
+        }
+
+        .Categorias{
+            text-align:center
+        }
+    </style>
+
+    <meta name="viewport" content="width=device=width" />
+    <title>Pagina del Usuario</title>
+</head>
+<body style="background-image:url(/Imagenes/klk.jpg); background-repeat:no-repeat;background-size:100%">
+    <div class="contenedor">
+        <table class="table table-bordered" style="text-align:center;background-color:white">
+            <tr>
+
+
+                <td>
+                    <img src="~/Imagenes/user.png" />
+                </td>
+            <tr>
+                <td>Usuario: @Session["Usuario"]</td>
+
+
+
+            </tr>
+
+            <tr>
+
+                <td><a href="@Url.Action("LoginEmpleado","Autenticacion")">Salir</a></td>
+
+
+
+            </tr>
+        </table>
+    </div>
+    <br />
+
+
+        <div class="panel panel-primary col-lg-12">
+            <div class="panel panel-danger">
+
+                <div class="panel-heading">
+                    <h1>Publicaciones Por Categorias</h1>
+
+                </div>
+
+                <div class="panel-body">
+                    <a href="AgregarPublicacion_Diseñador">
+                        <button type="button" class="btn btn-danger btn-lg btn-block">
+                            <span class="glyphicon glyphicon-briefcase"></span> Diseñador
+                        </button>
+                    </a>
+                    <br />
+
+
+                    <a href="AgregarPublicacion_Programador">
+                        <button type="button" class="btn btn-success btn-lg btn-block">
+                            <span class="glyphicon glyphicon-briefcase"></span> Programador
+                        </button>
+                    </a>
+
+
+
+
+                    <br />
+                    <a href="AgregarPublicacion_Administrativa">
+                        <button type="button" class="btn btn-primary btn-lg btn-block">
+                            <span class="glyphicon glyphicon-briefcase"></span> Area Administrativa
+                        </button>
+                    </a>
+                    <br />
+
+                    <a href="AgregarPublicacion_Administrativa">
+                        <button type="button" class="btn btn-warning btn-lg btn-block">
+                            <span class="glyphicon glyphicon-briefcase"></span>  Area Mantenimiento
+                        </button>
+                    </a>
+                    <br />
+
+                    <a href="PublicacionesEmpleados">
+                        <button type="button" class="btn btn-block btn-lg btn-block">
+                            <span class="glyphicon glyphicon-folder-open"></span> Mis Publicaciones
+                        </button>
+                    </a>
+
+                    <br />
+
+                   
+
+                    <a href='@Url.Action("VerPostulados","Prueba")'>
+                        <button type="button" class="btn btn-info btn-lg btn-block">
+                            <span class="glyphicon glyphicon-user"></span> Ver Postulados
+                        </button>
+
+                    </a>
+
+                </div>
+
+               
+
+            </div>
+        </div>
+
+     
+                        
+             
+
+  
+
+
+
+
+
+  

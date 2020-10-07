@@ -1,0 +1,90 @@
+﻿
+@model IEnumerable<Prueba_Bolsa_Empleados.Models.Publicacion>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["IDEmpleado"] == null)
+    {
+        Response.Redirect("~/Autenticacion/Index");
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .contenedor {
+        }
+
+        .encabezado {
+            text-align: center;
+            font-size: 50px
+        }
+
+        .panel-heading {
+            text-align: center;
+            color: darkturquoise;
+        }
+
+        .bi bi-trash {
+            color: red;
+            background-color: red
+        }
+
+        .botones {
+            text-align: right;
+            margin-right: 93%;
+        }
+
+        .i {
+        }
+    </style>
+
+    <meta name="viewport" content="width=device=width" />
+    <title>Pagina del Usuario</title>
+</head>
+<body style="background-color:#ffffff">
+    
+
+    <div style="padding:10%"><h1 class="encabezado">Mis Publicaciones Realizadas</h1></div>
+    <div>
+        @foreach (var publicaciones in Model)
+        {
+            <div class="panel panel-default col-lg-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">@publicaciones.Nombre_Compañia </div>
+                    <div class="panel-body">
+                        <img style="margin-left:30%" height="215" width="215" class="img-responsive" src="@publicaciones.Logo">
+                        <p>Posicion: @publicaciones.Posicion</p>
+                        <p>Tipo de Horario: @publicaciones.Tipo_Horario</p>
+                        <p>Url Pagina: <a href="@publicaciones.Url_Pagina" target="_blank">Nuestra Pagina</a></p>
+                        <p>Direccion: @publicaciones.Dirreccion</p>
+                        <p>Correo: @publicaciones.Correo</p>
+                        <p>Fecha: @publicaciones.Fecha_Publicacion</p>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+
+        }
+
+        <a href="@Url.Action("Index","Autenticacion")">
+            <button type="button" style="margin-top:60%;margin-right:40%" class="btn btn-danger btn-sm" value="submit">
+                <span class="glyphicon glyphicon-chevron-left"></span> Volver Al menu Principal
+            </button>
+        </a>
+
+
+
+    </div>
+
+
+
+
+</body>
+</html>

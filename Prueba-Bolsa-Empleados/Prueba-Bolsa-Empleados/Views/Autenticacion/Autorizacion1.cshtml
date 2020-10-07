@@ -1,0 +1,74 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["IDAdmin"] == null)
+    {
+        Response.Redirect("~/Web/LoginPage");
+    }
+}
+
+<h2 style="text-align:center">Bienvenido Usuario Admin</h2>
+<br />
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .contenedor {
+        }
+
+        .encabezado {
+            text-align: center;
+            font-size: 50px
+        }
+
+        .panel-heading {
+            text-align: center;
+            color: darkturquoise;
+        }
+
+        .bi bi-trash {
+            color: red;
+            background-color: red
+        }
+
+        .botones {
+            text-align: right;
+            margin-right: 93%;
+        }
+
+        .i {
+        }
+    </style>
+
+    <meta name="viewport" content="width=device=width" />
+    <title>Pagina del Usuario</title>
+</head>
+<body style="background-color:#ffffff">
+    <div class="contenedor">
+        <table class="table table-bordered" style="text-align:center">
+            <tr>
+
+                <td>
+                    <img src="~/images/17241-200.png" />
+                </td>
+            <tr>
+                <td>Usuario: @Session["Usuario"]</td>
+
+
+
+            </tr>
+
+            <tr>
+
+                <td><a href="@Url.Action("LogOut","Web")">Salir</a></td>
+
+
+
+            </tr>
+        </table>
+
+
+
+
+    </div>
+    
